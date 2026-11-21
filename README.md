@@ -9,6 +9,13 @@ and works in full screen.
 
 > LyricBubbles is an independent project. It is not made, endorsed or supported by Spotify or LRCLIB.
 
+## Download
+
+### [⬇ Download LyricBubbles for Mac](https://github.com/jeff3-dev/LyricBubbles/releases/latest)
+
+Free. Needs macOS 15 or later and the Spotify desktop app. See [How to install](#how-to-install) for
+the first-launch steps.
+
 ## Screenshots
 
 Frames rendered from the app's own drawing code, with demo lyrics.
@@ -54,47 +61,20 @@ Frames rendered from the app's own drawing code, with demo lyrics.
 - macOS 15 (Sequoia) or later, on Apple silicon or Intel.
 - The **Spotify desktop app** for Mac (not the web player), signed in and playing.
 - An internet connection (lyrics are fetched from LRCLIB).
-- To build: Xcode 16 or later, or the matching Command Line Tools (Swift 5.10+ with the macOS 15 SDK).
 
-There are no third-party dependencies. The project is a plain Swift package (no Xcode project).
+## How to install
 
-## Installation
-
-### From a release
-
-1. Download `LyricBubbles-<version>.dmg` (or `.zip`) from the
-   [Releases](../../releases) page.
+1. [Download the DMG](https://github.com/jeff3-dev/LyricBubbles/releases/latest) and open it.
 2. Drag **LyricBubbles** into **Applications**.
-3. The app is ad-hoc signed and not notarized, so the first time macOS will refuse to open it.
+3. The first time you open it, macOS will block it, because the app isn't registered with Apple.
    Click **Done**, then open **System Settings ▸ Privacy & Security**, find the message about
    LyricBubbles and click **Open Anyway**.
-   If that option doesn't appear, run:
+   If that option doesn't appear, paste this into the Terminal app and press Return:
    ```bash
    xattr -dr com.apple.quarantine /Applications/LyricBubbles.app
    ```
 4. When LyricBubbles asks to control Spotify, click **OK**. It needs this to read the current track
    and position, and to send play/pause/skip.
-
-### From source
-
-```bash
-git clone https://github.com/jeff3-dev/LyricBubbles.git
-cd LyricBubbles
-./build.sh              # builds LyricBubbles.app (release) in the repo folder
-open LyricBubbles.app
-```
-
-## Building
-
-```bash
-swift build             # debug build
-swift test              # run the test suite
-./build.sh              # release LyricBubbles.app next to the script
-./build.sh --install    # also copies it to /Applications and opens it
-./build.sh --dist       # universal (arm64 + x86_64) build, packed into dist/*.dmg and dist/*.zip
-```
-
-Set `VERSION` and `BUILD` at the top of `build.sh` before packaging a release.
 
 ## Usage
 
@@ -124,8 +104,6 @@ Everything is set in **Settings** (⌘,):
 - **One pane per style**: grouped controls for that style's look and motion, with presets where
   the style has them. Each pane ends with the same **Playback** setting (Off, On Hover, Always).
 
-Settings are stored in the app's user defaults (`local.lyricbubbles`).
-
 ## Permissions
 
 | Permission | Why | Required |
@@ -144,6 +122,11 @@ Settings are stored in the app's user defaults (`local.lyricbubbles`).
   within about a second. Its own buttons update immediately.
 - **Not notarized.** Release builds are ad-hoc signed, so Gatekeeper asks for confirmation on first launch.
 - Lyrics timing depends on LRCLIB's data; use ⌥⌘[ / ⌥⌘] to fix a song that's off.
+
+## For developers
+
+Want to build LyricBubbles from its source code? See [BUILDING.md](BUILDING.md). Most people don't
+need this; just use the download above.
 
 ## Credits and acknowledgments
 
