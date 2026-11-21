@@ -1,0 +1,27 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+*.xcodeproj/
+xcuserdata/
+DerivedData/
+
+# Built app and release packages (attach these to GitHub Releases, don't commit them)
+LyricBubbles.app/
+dist/
+*.dmg
+*.zip
+
+# macOS
+.DS_Store
+._*
+
+# Editors and local tooling
+.vscode/
+.idea/
+.claude/
+CLAUDE.local.md
+*.swp
+
+# Private notes for the developer
+GITHUB_RELEASE_GUIDE.txt

@@ -1,0 +1,48 @@
+LyricBubbles
+============
+
+LyricBubbles shows the lyrics of whatever Spotify is playing,
+in time with the song, in different visual styles.
+
+WHAT YOU NEED
+- A Mac running macOS 15 (Sequoia) or later.
+- The Spotify app for Mac (not the web player), signed in and playing a song.
+
+INSTALL
+1. Drag LyricBubbles into the Applications folder.
+   (From the .zip: double-click it, then drag LyricBubbles into Applications.)
+2. Open LyricBubbles from Applications. The first time, macOS will say it
+   "can't be opened" or "could not verify" it. That's expected: this app isn't
+   from the App Store or notarized by Apple. Click Done (not Move to Trash).
+3. Open System Settings > Privacy & Security, scroll down to the message about
+   LyricBubbles and click "Open Anyway". Enter your password, then click
+   "Open Anyway" once more.
+4. When LyricBubbles asks to control Spotify, click OK. It needs this to know
+   which song is playing and where you are in it.
+
+You only do steps 2 to 4 once. After that it opens like any other app.
+
+If "Open Anyway" doesn't show up, open Terminal and paste this, then try again:
+    xattr -dr com.apple.quarantine /Applications/LyricBubbles.app
+
+USING IT
+- Play a song in Spotify, then pick a style on the dashboard.
+- Hover over a style window for the Dashboard and full screen buttons, and for
+  play/pause and skip controls (Settings can show them always or hide them).
+  Press Esc to leave full screen.
+- Settings (Cmd-,) has controls for each style.
+- If lyrics run early or late: Cmd-[ and Cmd-] nudge them.
+
+GOOD TO KNOW
+- LyricBubbles is an independent project. It isn't made, endorsed or supported
+  by Spotify or LRCLIB.
+- Lyrics come from LRCLIB and belong to their songwriters and publishers. They're
+  shown for personal use. Some songs have no synced lyrics.
+- The app never records or saves audio.
+
+UPDATING
+Quit LyricBubbles, then drag the new version into Applications and choose Replace.
+macOS may ask again to let it control Spotify.
+
+UNINSTALL
+Drag LyricBubbles from Applications to the Trash.
